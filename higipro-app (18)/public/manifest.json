@@ -1,0 +1,27 @@
+{
+  "name": "HigiPro Gestão de Estofados",
+  "short_name": "HigiPro",
+  "description": "Sistema de gestão completo para empresas de higienização e impermeabilização de estofados.",
+  "start_url": "/",
+  "id": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "window-controls-overlay"],
+  "background_color": "#071a33",
+  "theme_color": "#071a33",
+  "orientation": "any",
+  "categories": ["business", "productivity"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

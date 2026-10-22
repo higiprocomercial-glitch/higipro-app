@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    background-color: #071a33;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    overscroll-behavior-y: none;
+    scroll-behavior: smooth;
+    height: 100%;
+  }
+
+  body {
+    background-color: #f8fafc;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    overscroll-behavior-y: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100%;
+    min-height: -webkit-fill-available;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 0;
+  }
+
+  #root {
+    min-height: 100%;
+    min-height: -webkit-fill-available;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Prevent text zoom and weird styling on iOS */
+  input, select, textarea {
+    font-size: 16px;
+  }
+  @media (min-width: 640px) {
+    input, select, textarea {
+      font-size: inherit;
+    }
+  }
+}
+
+/* Safe area utilities for iPhone / notch / gesture bar */
+.pb-safe {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom, 0px));
+}
+
+.pt-safe {
+  padding-top: max(0.5rem, env(safe-area-inset-top, 0px));
+}
+
+.ios-safe-top {
+  height: env(safe-area-inset-top, 0px);
+  min-height: 0px;
+  background-color: #071a33;
+}
+
+/* Slim touch scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ==========================================================================
+   TEMA ESCURO OFICIAL HIGIPRO (Preto, Azul, Dourado e Branco)
+   Layout Ultra-Clean, Moderno, Alto Contraste e Organizado
+   ========================================================================== */
+html.dark, html.theme-dark, [data-theme="dark"] {
+  color-scheme: dark;
+}
+
+.theme-dark {
+  background-color: #030712 !important;
+  color: #f8fafc;
+}
+
+/* Scrollbars no tema escuro */
+.theme-dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #1e3a66;
+}
+
+/* Containers e Cards Principais - Azul Noturno / Preto Corporativo */
+.theme-dark .bg-white {
+  background-color: #0b1f3c !important;
+  color: #f8fafc;
+  border-color: rgba(30, 64, 115, 0.5) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Superfícies de Cards Especiais e Pastéis (Métricas e Relatórios) no Tema Escuro */
+.theme-dark .bg-\[\#f0fdf9\],
+.theme-dark .bg-\[\#f0fdf4\],
+.theme-dark .bg-\[\#eff6ff\],
+.theme-dark .bg-\[\#fffbeb\],
+.theme-dark .bg-\[\#fff1f2\],
+.theme-dark .bg-\[\#f0fdfa\],
+.theme-dark .bg-\[\#fefce8\],
+.theme-dark .bg-\[\#ecfeff\],
+.theme-dark .bg-\[\#f8fafc\] {
+  background-color: #0c2347 !important;
+  border-color: rgba(59, 130, 246, 0.35) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px -2px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Superfícies secundárias, divisores e cabeçalhos de tabela */
+.theme-dark .bg-slate-50,
+.theme-dark .bg-gray-50,
+.theme-dark [class*="bg-slate-50"],
+.theme-dark [class*="bg-gray-50"] {
+  background-color: #061326 !important;
+  border-color: rgba(30, 64, 115, 0.45) !important;
+}
+
+.theme-dark .bg-slate-100,
+.theme-dark .bg-gray-100,
+.theme-dark [class*="bg-slate-100"],
+.theme-dark [class*="bg-gray-100"] {
+  background-color: #0d2547 !important;
+  border-color: rgba(30, 64, 115, 0.5) !important;
+}
+
+.theme-dark .bg-slate-200,
+.theme-dark .bg-gray-200,
+.theme-dark [class*="bg-slate-200"],
+.theme-dark [class*="bg-gray-200"] {
+  background-color: #12335f !important;
+  border-color: rgba(30, 64, 115, 0.6) !important;
+}
+
+/* Tipografia de Alto Contraste no Tema Escuro */
+.theme-dark .text-slate-900,
+.theme-dark .text-slate-800,
+.theme-dark .text-gray-900,
+.theme-dark .text-gray-800 {
+  color: #ffffff !important;
+}
+
+.theme-dark .text-slate-700,
+.theme-dark .text-slate-600,
+.theme-dark .text-gray-700,
+.theme-dark .text-gray-600 {
+  color: #e2e8f0 !important;
+}
+
+.theme-dark .text-slate-500,
+.theme-dark .text-slate-400,
+.theme-dark .text-gray-500,
+.theme-dark .text-gray-400 {
+  color: #94a3b8 !important;
+}
+
+/* Cores de Destaque Vibrantes no Tema Escuro (evita azul escuro invisível sobre fundo escuro) */
+.theme-dark .text-blue-900,
+.theme-dark .text-blue-800,
+.theme-dark .text-blue-700 {
+  color: #93c5fd !important;
+}
+
+.theme-dark .text-blue-600 {
+  color: #60a5fa !important;
+}
+
+.theme-dark .text-indigo-900,
+.theme-dark .text-indigo-800,
+.theme-dark .text-indigo-700 {
+  color: #c7d2fe !important;
+}
+
+.theme-dark .text-indigo-600 {
+  color: #a5b4fc !important;
+}
+
+.theme-dark .text-emerald-900,
+.theme-dark .text-emerald-800,
+.theme-dark .text-emerald-700 {
+  color: #6ee7b7 !important;
+}
+
+.theme-dark .text-emerald-600 {
+  color: #34d399 !important;
+}
+
+.theme-dark .text-rose-900,
+.theme-dark .text-rose-800,
+.theme-dark .text-rose-700,
+.theme-dark .text-rose-600,
+.theme-dark .text-red-700,
+.theme-dark .text-red-600 {
+  color: #fda4af !important;
+}
+
+.theme-dark .text-amber-950,
+.theme-dark .text-amber-900,
+.theme-dark .text-amber-800,
+.theme-dark .text-amber-700 {
+  color: #fde68a !important;
+}
+
+.theme-dark .text-amber-600 {
+  color: #fbbf24 !important;
+}
+
+.theme-dark .text-cyan-900,
+.theme-dark .text-cyan-800,
+.theme-dark .text-cyan-700,
+.theme-dark .text-cyan-600 {
+  color: #67e8f9 !important;
+}
+
+.theme-dark .text-purple-900,
+.theme-dark .text-purple-800,
+.theme-dark .text-purple-700,
+.theme-dark .text-purple-600 {
+  color: #d8b4fe !important;
+}
+
+/* Bordas e divisores com tom azul sutil e limpo */
+.theme-dark .border-slate-100,
+.theme-dark .border-slate-200,
+.theme-dark .border-slate-200\/80,
+.theme-dark .border-slate-200\/90,
+.theme-dark .border-slate-300,
+.theme-dark .border-gray-100,
+.theme-dark .border-gray-200 {
+  border-color: rgba(30, 64, 115, 0.55) !important;
+}
+
+.theme-dark .divide-slate-100 > * + *,
+.theme-dark .divide-slate-200 > * + * {
+  border-color: rgba(30, 64, 115, 0.45) !important;
+}
+
+/* Campos de Formulário no Tema Escuro: Fundo Escuro, Texto Branco, Foco Dourado */
+.theme-dark input:not([type="checkbox"]):not([type="radio"]),
+.theme-dark select,
+.theme-dark textarea {
+  background-color: #061326 !important;
+  color: #ffffff !important;
+  border-color: #1e3a66 !important;
+}
+
+.theme-dark input:not([type="checkbox"]):not([type="radio"])::placeholder,
+.theme-dark textarea::placeholder {
+  color: #64748b !important;
+}
+
+.theme-dark input:not([type="checkbox"]):not([type="radio"]):focus,
+.theme-dark select:focus,
+.theme-dark textarea:focus {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.25) !important;
+}
+
+.theme-dark select option {
+  background-color: #071a33;
+  color: #ffffff;
+}
+
+/* Efeitos Hover no Tema Escuro */
+.theme-dark .hover\:bg-slate-50:hover,
+.theme-dark .hover\:bg-gray-50:hover {
+  background-color: #0d2547 !important;
+}
+
+.theme-dark .hover\:bg-slate-100:hover,
+.theme-dark .hover\:bg-gray-100:hover {
+  background-color: #12335f !important;
+}
+
+.theme-dark .hover\:bg-blue-50:hover {
+  background-color: #0c2b57 !important;
+}
+
+/* Modais e Diálogos de Confirmação */
+.theme-dark .bg-white.rounded-3xl,
+.theme-dark .bg-white.rounded-2xl {
+  background-color: #07162e !important;
+  border: 1px solid rgba(245, 158, 11, 0.25) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Badges e Pílulas Elegantes */
+.theme-dark .bg-blue-50 {
+  background-color: rgba(14, 48, 94, 0.6) !important;
+  color: #93c5fd !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+}
+
+.theme-dark .bg-amber-50 {
+  background-color: rgba(245, 158, 11, 0.12) !important;
+  color: #fcd34d !important;
+  border-color: rgba(245, 158, 11, 0.3) !important;
+}
+
+.theme-dark .bg-amber-100 {
+  background-color: rgba(245, 158, 11, 0.22) !important;
+  color: #fde68a !important;
+  border-color: rgba(245, 158, 11, 0.45) !important;
+}
+
+.theme-dark .bg-amber-200 {
+  background-color: rgba(245, 158, 11, 0.3) !important;
+  color: #fef08a !important;
+}
+
+/* Cores de texto âmbar/dourado no tema escuro para legibilidade máxima */
+.theme-dark .text-amber-950,
+.theme-dark .text-amber-900 {
+  color: #fde68a !important;
+}
+
+.theme-dark .text-amber-900\/80,
+.theme-dark .text-amber-900\/90 {
+  color: #fef08a !important;
+}
+
+.theme-dark .bg-emerald-50 {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+  color: #6ee7b7 !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+.theme-dark .bg-rose-50 {
+  background-color: rgba(244, 63, 94, 0.12) !important;
+  color: #fda4af !important;
+  border-color: rgba(244, 63, 94, 0.3) !important;
+}
+
+/* Documentos de Orçamento e Recibo Impressos / Exportação em Imagem / PDF */
+.theme-dark .printable-document,
+.theme-dark [data-printable="true"],
+.theme-dark #orcamento-document,
+.theme-dark #orcamento-document *,
+.theme-dark #recibo-document,
+.theme-dark #recibo-document * {
+  color-scheme: light;
+}
+
+.theme-dark #orcamento-document,
+.theme-dark #recibo-document {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+.theme-dark #orcamento-document .bg-white,
+.theme-dark #recibo-document .bg-white {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  box-shadow: none !important;
+  border-color: #e2e8f0 !important;
+}
+
+.theme-dark #orcamento-document .text-slate-800,
+.theme-dark #orcamento-document .text-slate-900,
+.theme-dark #recibo-document .text-slate-800,
+.theme-dark #recibo-document .text-slate-900 {
+  color: #0f172a !important;
+}
+
+.theme-dark #orcamento-document .text-slate-600,
+.theme-dark #orcamento-document .text-slate-500,
+.theme-dark #recibo-document .text-slate-600,
+.theme-dark #recibo-document .text-slate-500 {
+  color: #475569 !important;
+}
+
+.theme-dark #orcamento-document .bg-slate-50,
+.theme-dark #recibo-document .bg-slate-50 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
